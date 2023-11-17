@@ -1,0 +1,27 @@
+{
+  "name": "phonebook",
+  "version": "1.0.0",
+  "description": "Backend for a simple phonebook app.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/willylin207/phonebook.git"
+  },
+  "author": "William Lin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/willylin207/phonebook/issues"
+  },
+  "homepage": "https://github.com/willylin207/phonebook#readme",
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

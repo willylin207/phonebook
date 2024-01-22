@@ -21,6 +21,8 @@ app.use(cors())
 app.use(express.json()) // json parser
 app.use(logger)
 
+app.use(express.static('dist'))
+
 let data = [
     {
         "id": 1,

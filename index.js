@@ -51,10 +51,19 @@ function generateSomewhatRandomId() {
     return Math.floor(Math.random() * SCALE)
 }
 
+/**
+ * Returns a JSON array of all entries.
+ */
 app.get('/api/persons', (req, res) => {
     res.json(data)
 })
 
+/**
+ * Creates a new entry in the phonebook.
+ * The new entry person's request body must contain a {name} and {number}.
+ * The new person should be unique (not already in the phonebook).
+ * Returns the created entry as JSON.
+ */
 app.post('/api/persons', (req, res) => {
     if (!req.body.name || !req.body.number) {
         res.status(400)
@@ -79,6 +88,9 @@ app.post('/api/persons', (req, res) => {
        .json(newEntry)
 })
 
+/**
+ * Returns a JSON containing the entry for the person with the given id.
+ */
 app.get('/api/persons/:id', (req, res) => {
     const id = Number(req.params.id)
     const person = data.find(person => person.id === id)
@@ -90,6 +102,9 @@ app.get('/api/persons/:id', (req, res) => {
     }
 })
 
+/**
+ * Deletes the entry with the given id.
+ */
 app.delete('/api/persons/:id', (req, res) => {
     const id = Number(req.params.id)
     data = data.filter(person => person.id !== id)
@@ -98,6 +113,9 @@ app.delete('/api/persons/:id', (req, res) => {
         .end()
 })
 
+/**
+ * Returns info about the number of entries in the phonebook.
+ */
 app.get('/info', (req, res) => {
     const numEntries = data.length
     const timeReceived = new Date()
